@@ -39,6 +39,7 @@ function M.set()
 
 		if config.mappings.invert then
 			map({ "n", "v" }, config.mappings.karen .. key, actions.delete(key), { desc = desc })
+      print(config.mappings.karen)
 			goto continue
 		end
 
@@ -87,7 +88,7 @@ function M.set()
 			kind = "trail"
 		end
 
-		map("", key, function() return actions.yank(kind) end, { expr = true, desc = desc })
+		map("n", key, function() return actions.yank(kind) end, { expr = true, desc = desc })
 
 		::continue::
 	end
